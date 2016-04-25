@@ -1,0 +1,7 @@
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\bin\Release\SQLtoInfluxDBLoader.exe.config
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\bin\Release\SQLtoInfluxDBLoader.exe
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\bin\Release\SQLtoInfluxDBLoader.pdb
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\bin\Release\InfluxDB.Net.dll
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\bin\Release\Microsoft.Threading.Tasks.dll
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\obj\Release\SQLtoInfluxDBLoader.exe
+C:\Users\fabrizio.zavalloni\Desktop\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\SQLtoInfluxDBLoader\obj\Release\SQLtoInfluxDBLoader.pdb

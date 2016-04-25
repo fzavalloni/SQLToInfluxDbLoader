@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <InfluxDB>
+    <databaseName>exchange_teste</databaseName>
+    <url>http://influx.monitoracao.locaweb.com.br</url>
+    <userName>monitoring</userName>
+    <password>c86758816b744bb7f2772b0ef7b53bd5</password>
+    <service_type>sql_painel_exchange_2010</service_type>
+  </InfluxDB>
+  <SQLServer>
+    <connectionString>Data Source=HM6214;Failover Partner=HM6215; Initial Catalog=ExchangeStatistics;Integrated Security=SSPI;</connectionString>
+    <Queries>
+      <Query id="1" Query="EXEC sp_getSPLAReport" Measurement="SPLAReport2010-12"/>      
+      <Query id="2" Query="select * FROM [dbo].[DAGStatistics] where date = CONVERT(date,GETDATE())" Measurement="DAGReport2010-12"/>
+      <Query id="3" Query="EXEC sp_GetStorageSpaceByMonth" Measurement="StorageReport2010-12"/>
+    </Queries>
+  </SQLServer>
+</Settings>
