@@ -1,13 +1,4 @@
-# SQLToInfluxDbLoader
-
-Executable which run a SQL Server Query and post its results to a InfluxDb Server
-
-It was built based in an spefific need I got, I had some reports in SQL Server reporting services and I wanted to
-put in InfluxDb + Grafana.
-
-# Configuration File
-```
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Settings>
   <InfluxDB>
     <databaseName>dbName</databaseName>
@@ -23,16 +14,7 @@ put in InfluxDb + Grafana.
     <Queries>
       <Query id="1" Query="select * FROM Statistics where date = CONVERT(date,GETDATE())" Measurement="DAGReport2013"/>
       <Query id="2" Query="EXEC sp_GetStorageSpaces" Measurement="StorageReport2013"/>
-      <Query id="3" Query="select * from FlowStatistics where Date = CONVERT(date,GETDATE()-1) group by Date" Measurement="MessageFlowReport2013"/>	  
+      <Query id="3" Query="select * from FlowStatistics where Date = CONVERT(date,GETDATE()-1) group by Date" Measurement="MessageFlowReport2013"/>   
     </Queries>
   </SQLServer>
 </Settings>
-```
-
-# Parameters
-
-/TestSQLConnection  -  Test the SQL credentials
-
-/TestInfluxDBConnection  -  Test the InfluxDB credentials
-
-/Run  -  Post the SQL Data to InfluxDB"
