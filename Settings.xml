@@ -2,10 +2,10 @@
 <Settings>
   <InfluxDB>
     <databaseName>exchange_teste</databaseName>
-    <url>http://influx.domian.com.br</url>
+    <url>http://influx.domain.com.br</url>
     <userName>monitoring</userName>
     <password>c86758816</password>
-    <service_type>sql_painel</service_type>
+    <service_type>sql_service_type</service_type>
   </InfluxDB>
   <SQLServer>
     <connectionString>Data Source=XXXX;Failover Partner=XXXX; Initial Catalog=ExchangeStatistics;Integrated Security=SSPI;</connectionString>
