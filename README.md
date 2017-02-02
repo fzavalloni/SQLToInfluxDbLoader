@@ -7,25 +7,35 @@ put in InfluxDb + Grafana.
 
 # Configuration File
 ```
-<?xml version="1.0" encoding="utf-8" ?>
-<Settings>
-  <InfluxDB>
-    <databaseName>dbName</databaseName>
-    <url>https://influxdb.domain.com.br</url>
-    <userName>influxUserName</userName>
-    <password>b6eae4bxxxxxxxxxxx65129779c</password>
-    <service_type>sql_tag_product</service_type><!--Tag to make the filters in Grafana-->
-  </InfluxDB>
-  <SQLServer>
-    <connectionString>Data Source=SQLServer001; Initial Catalog=DatabaseName;Integrated Security=SSPI;</connectionString>
-    <!--Is possible insert more than one query-->
-    <!--The parameter Measurement is the table name that will be created in InfluxDB-->
-    <Queries>
-      <Query id="1" Query="select * FROM Statistics where date = CONVERT(date,GETDATE())" Measurement="DAGReport2013"/>
-      <Query id="2" Query="EXEC sp_GetStorageSpaces" Measurement="StorageReport2013"/>
-      <Query id="3" Query="select * from FlowStatistics where Date = CONVERT(date,GETDATE()-1) group by Date" Measurement="MessageFlowReport2013"/>	  
-    </Queries>
-  </SQLServer>
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <InfluxSetting>
+    <Databasename>InFluxDatabaseName</Databasename>
+    <Url>http://influx.domain.com.br</Url>
+    <UserName>InfluxUser</UserName>
+    <Password>SecretPassword</Password>
+    <Tags>
+      <Tag>
+        <TagName>service_type</TagName>
+        <TagValue>sql_server</TagValue>
+      </Tag>
+      <Tag>
+        <TagName>version</TagName>
+        <TagValue>2008_r2</TagValue>
+      </Tag>
+    </Tags>
+  </InfluxSetting>
+  <DatabaseSettings>
+    <ProviderList>
+      <Provider>
+        <ConnectionString>Data Source=Server01; Initial Catalog=DBName;Integrated Security=SSPI;</ConnectionString>
+        <Queries>
+          <QueryItem id="1" query="EXEC sp_GetStatistics" measurement="Report2017" />
+          <QueryItem id="2" query="EXEC sp_GetStorageSpace" measurement="StorageReport2017" />
+        </Queries>
+      </Provider>
+    </ProviderList>
+  </DatabaseSettings>
 </Settings>
 ```
 
