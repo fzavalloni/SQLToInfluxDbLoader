@@ -17,3 +17,13 @@ D:\Users\fabrizio.zavalloni\Documentos\Projetos-.NET\Git\SQLToInfluxDbLoader\obj
 D:\Users\fabrizio.zavalloni\Documentos\Projetos-.NET\Git\SQLToInfluxDbLoader\obj\Debug\SQLtoInfluxDBLoader.pdb
 D:\Users\fabrizio.zavalloni\Documentos\Projetos-.NET\Git\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.exe
 D:\Users\fabrizio.zavalloni\Documentos\Projetos-.NET\Git\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.pdb
+D:\Users\fabrizio.zavalloni\Documentos\OD\Projetos-.NET\Git\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.exe.config
+D:\Users\fabrizio.zavalloni\Documentos\OD\Projetos-.NET\Git\SQLToInfluxDbLoader\obj\Debug\SQLtoInfluxDBLoader.exe
+D:\Users\fabrizio.zavalloni\Documentos\OD\Projetos-.NET\Git\SQLToInfluxDbLoader\obj\Debug\SQLtoInfluxDBLoader.pdb
+D:\Users\fabrizio.zavalloni\Documentos\OD\Projetos-.NET\Git\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.exe
+D:\Users\fabrizio.zavalloni\Documentos\OD\Projetos-.NET\Git\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.pdb
+E:\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.exe.config
+E:\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.exe
+E:\SQLToInfluxDbLoader\bin\Debug\SQLtoInfluxDBLoader.pdb
+E:\SQLToInfluxDbLoader\obj\Debug\SQLtoInfluxDBLoader.exe
+E:\SQLToInfluxDbLoader\obj\Debug\SQLtoInfluxDBLoader.pdb

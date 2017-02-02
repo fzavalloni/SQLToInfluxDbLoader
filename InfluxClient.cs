@@ -15,19 +15,20 @@ namespace SQLtoInfluxDBLoader
         IInfluxDb client = null; 
         public InfluxClient(string url,string userName,string password)
         {
-            client = new InfluxDb(url, userName, password, InfluxDB.Net.Enums.InfluxVersion.v09x);            
+            client = new InfluxDb(url, userName, password, InfluxVersion.v09x);            
         }
 
-        public void WriteData(Point[] pointArray,QueryInfo query)
+        public void WriteData(Point[] pointArray,InfluxDBSettings influxDbSettings)
         {
             foreach (Point p in pointArray)
-            {
-                var writeResponse = client.WriteAsync(InfluxDBData.DatabaseName, p);                
+            {                
+                InfluxDBSettings config = influxDbSettings;
+                var writeResponse = client.WriteAsync(config.Databasename, p);
 
                 if (!writeResponse.Result.Success)
                 {
-                    throw new Exception(writeResponse.Result.ToString());                    
-                }                
+                    throw new Exception(writeResponse.Result.ToString());
+                }
             }
         }
 
@@ -36,30 +37,29 @@ namespace SQLtoInfluxDBLoader
             return await client.PingAsync();
         }
 
-
-        public static Point[] GetPointData(DataTable dt, string serviceType, string measurement)
-        {
-            Point[] pointCollection;
+        public static Point[] GetPointData(DataTable dt, List<Tag> tags, string measurement)
+        {           
             List<Point> listPoint = new List<Point>();
 
             foreach (DataRow row in dt.Rows)
             {
                 Point point = new Point();
-                point = GetPoint(GetColumns(dt), row, measurement, serviceType);
+                point = GetPoint(GetColumns(dt), row, measurement, tags);
                 listPoint.Add(point);
-            }
+            }            
 
-            pointCollection = listPoint.ToArray();
-
-            return pointCollection;
+            return listPoint.ToArray();
         }
 
-        private static Point GetPoint(List<string> columns, DataRow row, string measurement, string serviceType)
+        private static Point GetPoint(List<string> columns, DataRow row, string measurement, List<Tag> tags)
         {
             Point point = new Point();
             //point.Timestamp = DateTime.UtcNow;
             //point.Precision = InfluxDB.Net.Enums.TimeUnit.Milliseconds;
-            point.Tags.Add("service_type", serviceType);
+            foreach (Tag tag in tags)
+            {
+                point.Tags.Add(tag.TagName, tag.TagValue);
+            }
             point.Measurement = measurement;
 
             foreach (string col in columns)
@@ -80,7 +80,7 @@ namespace SQLtoInfluxDBLoader
 
         private static object GetRowData(DataRow row, string column)
         {
-            return row[column].ToString();
+            return row[column];
         }
     }
 }

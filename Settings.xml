@@ -1,17 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-16" ?>
-<Settings>
-  <InfluxDB>
-    <databaseName>exchange_teste</databaseName>
-    <url>http://influx.domain.com.br</url>
-    <userName>monitoring</userName>
-    <password>c86758816</password>
-    <service_type>sql_service_type</service_type>
-  </InfluxDB>
-  <SQLServer>
-    <connectionString>Data Source=XXXX;Failover Partner=XXXX; Initial Catalog=ExchangeStatistics;Integrated Security=SSPI;</connectionString>
-    <Queries>
-      <Query id="1" Query="EXEC sp_getSPLAReport" Measurement="SPLAReport"/>      
-      <Query id="2" Query="select * FROM [dbo].[DAGStatistics] where 'date' = CONVERT(date,GETDATE())" Measurement="XXXXX"/>                      
-    </Queries>
-  </SQLServer>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <InfluxSetting>
+    <Databasename>InFluxDatabaseName</Databasename>
+    <Url>http://influx.domain.com.br</Url>
+    <UserName>InfluxUser</UserName>
+    <Password>SecretPassword</Password>
+    <Tags>
+      <Tag>
+        <TagName>service_type</TagName>
+        <TagValue>sql_server</TagValue>
+      </Tag>
+      <Tag>
+        <TagName>version</TagName>
+        <TagValue>2008_r2</TagValue>
+      </Tag>
+    </Tags>
+  </InfluxSetting>
+  <DatabaseSettings>
+    <ProviderList>
+      <Provider>
+        <ConnectionString>Data Source=Server01; Initial Catalog=DBName;Integrated Security=SSPI;</ConnectionString>
+        <Queries>
+          <QueryItem id="1" query="EXEC sp_GetStatistics" measurement="Report2017" />
+          <QueryItem id="2" query="EXEC sp_GetStorageSpace" measurement="StorageReport2017" />
+        </Queries>
+      </Provider>
+    </ProviderList>
+  </DatabaseSettings>
 </Settings>
