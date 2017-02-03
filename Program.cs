@@ -91,6 +91,7 @@ namespace SQLtoInfluxDBLoader
                             {
                                 using (SqlConnection connection = new SqlConnection(provider.ConnectionString))
                                 {
+                                    connection.Open();
                                     dao = new DAO(connection);
                                     //Read the Queries collection in the Settings.xml file
                                     foreach (QueryItem item in provider.Queries)
